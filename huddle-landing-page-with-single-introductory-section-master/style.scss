@@ -1,0 +1,131 @@
+$bg-desktop: url("images/bg-desktop.svg");
+$bg-mobile: url("images/bg-mobile.svg");
+$color-primary: hsl(257, 40%, 49%);
+$color-secondary: hsl(300, 69%, 71%);
+$heading-font: 'Poppins', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+
+body {
+    background-color: $color-primary;
+    background-image: $bg-desktop;
+    background-size: contain;
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+}
+
+.logo {
+    min-width: 150px;
+    width: 10%;
+    padding: 40px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    gap: clamp(16px, 2vw, 20px);
+    color: white;
+    font-family: $body-font;
+    font-weight: 400;
+}
+
+.hero-image {
+    display: block;
+    width: 90%;
+    padding-top: 50px;
+    padding-left: 40px;
+}
+
+.hero-content-container {
+    align-self: start;
+    padding-top: clamp(20px, 6vw, 65px);
+    padding-right: 30px;
+}
+
+h1 {
+    font-family: $heading-font;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 2.3vw, 2rem)
+}
+
+p {
+    padding: 5px 0 15px 0;
+    font-size: clamp(0.8rem, 1.2vw, 1rem)
+}
+
+button {
+    border: 1px solid $color-primary;
+    border-radius: 50px;
+    padding: 15px 50px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    color: $color-primary;
+    font-size: clamp(0.8rem, 1.2vw, 1rem)
+}
+
+button:hover {
+    background-color: $color-secondary;
+    color: white;
+    cursor: pointer;
+}
+
+.socials-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 60px;
+    padding-bottom: 40px;
+}
+
+.socials {
+    color: white;
+    font-size: 25px;
+}
+
+.socials:hover {
+    color: $color-secondary;
+}
+
+@media screen and (max-width: 765px) {
+    body {
+        background-color: $color-primary;
+        background-image: $bg-mobile;
+        background-size: contain;
+        grid-template-rows: 90px auto auto;
+    }
+
+    .logo {
+        padding: 35px 0 0 35px;
+    }
+
+    main {
+        align-items: start;
+        padding-bottom: 40px;
+    }
+
+    .hero-image-container {
+        line-height: 0;
+    }
+
+    .hero-image {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 20px 0 20px;
+    }
+
+    .hero-content-container {
+        text-align: center;
+        padding: 0 30px;
+    }
+
+    button {
+        padding: 15px 100px;
+    }
+
+    .socials-container {
+        justify-content: center;
+        padding: 0 20px 20px 10px;
+    }
+
+}
