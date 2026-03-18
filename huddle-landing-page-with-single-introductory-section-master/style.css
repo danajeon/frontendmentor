@@ -7,11 +7,24 @@ body {
   grid-template-rows: auto 1fr auto;
   margin: 0;
 }
+@media screen and (max-width: 765px) {
+  body {
+    background-color: hsl(257, 40%, 49%);
+    background-image: url("images/bg-mobile.svg");
+    background-size: contain;
+    grid-template-rows: 90px auto auto;
+  }
+}
 
 .logo {
   min-width: 150px;
   width: 10%;
   padding: 40px;
+}
+@media screen and (max-width: 765px) {
+  .logo {
+    padding: 35px 0 0 35px;
+  }
 }
 
 main {
@@ -22,6 +35,18 @@ main {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
 }
+@media screen and (max-width: 765px) {
+  main {
+    align-items: start;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .hero-image-container {
+    line-height: 0;
+  }
+}
 
 .hero-image {
   display: block;
@@ -29,20 +54,31 @@ main {
   padding-top: 50px;
   padding-left: 40px;
 }
+@media screen and (max-width: 765px) {
+  .hero-image {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 20px 0 20px;
+  }
+}
 
 .hero-content-container {
   align-self: start;
   padding-top: clamp(20px, 6vw, 65px);
   padding-right: 30px;
 }
-
-h1 {
+@media screen and (max-width: 765px) {
+  .hero-content-container {
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+.hero-content-container h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: clamp(1.4rem, 2.3vw, 2rem);
 }
-
-p {
+.hero-content-container p {
   padding: 5px 0 15px 0;
   font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
@@ -56,11 +92,15 @@ button {
   color: hsl(257, 40%, 49%);
   font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
-
 button:hover {
   background-color: hsl(300, 69%, 71%);
   color: white;
   cursor: pointer;
+}
+@media screen and (max-width: 765px) {
+  button {
+    padding: 15px 100px;
+  }
 }
 
 .socials-container {
@@ -70,56 +110,16 @@ button:hover {
   padding-right: 60px;
   padding-bottom: 40px;
 }
-
-.socials {
+.socials-container .socials {
   color: white;
   font-size: 25px;
 }
-
-.socials:hover {
+.socials-container .socials:hover {
   color: hsl(300, 69%, 71%);
 }
-
 @media screen and (max-width: 765px) {
-  body {
-    background-color: hsl(257, 40%, 49%);
-    background-image: url("images/bg-mobile.svg");
-    background-size: contain;
-    grid-template-rows: 90px auto auto;
-  }
-
-  .logo {
-    padding: 35px 0 0 35px;
-  }
-
-  main {
-    align-items: start;
-    padding-bottom: 40px;
-  }
-
-  .hero-image-container {
-    line-height: 0;
-  }
-
-  .hero-image {
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px 20px 0 20px;
-  }
-
-  .hero-content-container {
-    text-align: center;
-    padding: 0 30px;
-  }
-
-  button {
-    padding: 15px 100px;
-  }
-
   .socials-container {
     justify-content: center;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 20px 10px;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
