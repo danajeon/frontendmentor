@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(30, 38%, 92%);
+}
+@media (max-width: 650px) {
+  body {
+    align-items: flex-start;
+    padding-top: 7rem;
+  }
+}
+
+article {
+  max-width: 42rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+}
+@media (max-width: 650px) {
+  article {
+    grid-template-columns: 1fr;
+  }
+}
+article .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+@media (max-width: 650px) {
+  article .image-container img {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+article .desktop {
+  display: block;
+}
+article .mobile {
+  display: none;
+}
+@media (max-width: 650px) {
+  article .desktop {
+    display: none;
+  }
+  article .mobile {
+    display: block;
+  }
+}
+article .description-container {
+  display: grid;
+  gap: 1.5rem;
+  background-color: hsl(0, 0%, 100%);
+  padding: 2.2rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+@media (max-width: 650px) {
+  article .description-container {
+    display: grid;
+    gap: 1.4rem;
+    padding: 2.3rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+}
+article .description-container small {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.4rem;
+}
+article .description-container h1 {
+  font-family: "Fraunces", serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+article .description-container .description {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+}
+article .description-container .price {
+  display: flex;
+  align-items: center;
+  gap: 1.143rem;
+}
+article .description-container .sale-price {
+  font-family: "Fraunces", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: hsl(158, 36%, 37%);
+}
+article .description-container .original-price {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+article .description-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: white;
+  background-color: hsl(158, 36%, 37%);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+article .description-container button:hover {
+  background-color: hsl(158, 42%, 18%);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
