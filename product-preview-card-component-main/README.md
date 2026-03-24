@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-[Live Site URL](dana-challenge2.netlify.app)
+[Live Site URL](https://dana-challenge2.netlify.app)
 
 ## My process
 
