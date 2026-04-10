@@ -1,0 +1,632 @@
+// colors
+$red-400: hsl(7, 99%, 70%);
+$red-light: hsl(0, 82%, 93%);
+$yellow-500: hsl(51, 100%, 49%);
+$yellow-light: hsl(62, 82%, 87%);
+$green-500: hsl(167, 45%, 70%);
+$green-800: hsl(167, 40%, 24%);
+$blue-800: hsl(198, 62%, 26%);
+$blue-light: hsl(199, 95%, 71%);
+$grey-950: hsl(212, 27%, 19%);
+$grey-600: hsl(213, 9%, 39%);
+$grey-550: hsl(232, 10%, 55%);
+$grey-400: hsl(210, 4%, 67%);
+$white: hsl(0, 100%, 100%);
+// fonts
+$font-heading: 'Fraunces', serif;
+$font-body: 'Barlow', sans-serif;
+// desktop breakpoint
+$breakpoint-desktop: 760px;
+// images
+$image-mobile-header: url('images/mobile/image-header.jpg');
+$image-desktop-header: url('images/desktop/image-header.jpg');
+$image-mobile-graphic-design: url('images/mobile/image-graphic-design.jpg');
+$image-desktop-graphic-design: url('images/desktop/image-graphic-design.jpg');
+$image-mobile-photography: url('images/mobile/image-photography.jpg');
+$image-desktop-photography: url('images/desktop/image-photography.jpg');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-size: 18px;
+    background-color: $green-500;
+
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    background: transparent;
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 1.5rem;
+        right: 1.5rem;
+
+        background-color: $white;
+        z-index: 1000;
+
+        list-style-type: none;
+
+        @media (min-width: $breakpoint-desktop) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 2rem;
+            top: auto;
+
+            background: transparent;
+        }
+
+        a {
+            font-family: $font-body;
+            font-weight: 600;
+            color: $grey-550;
+            font-size: 0.8rem;
+
+            text-decoration: none;
+
+            @media (min-width: $breakpoint-desktop) {
+                font-family: $font-body;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+
+        .contact {
+            &:hover {
+                background-color: $blue-light;
+                color: $white;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            width: 0;
+            height: 0;
+            transform: translateY(calc(-100% + 1px));
+            border-left: 30px solid transparent;
+            border-bottom: 30px solid $white;
+
+            @media (min-width: $breakpoint-desktop) {
+                display: none;
+            }
+        }
+
+        .contact {
+            font-family: $font-heading;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: black;
+            text-transform: uppercase;
+            background-color: $yellow-500;
+            padding: 1rem 1.7rem;
+            border-radius: 999px;
+
+            @media (min-width: $breakpoint-desktop) {
+                background-color: $white;
+            }
+        }
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2.5rem 0 3.5rem 0;
+
+        .contact {
+            margin-top: 1rem;
+
+            font-family: $font-heading;
+            color: black;
+        }
+
+        li:last-child {
+            margin-top: 1rem;
+        }
+    }
+
+    .nav-menu {
+        background: none;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            display: none;
+        }
+    }
+}
+
+.hero {
+    height: 70vh;
+    background-image: $image-mobile-header;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 605px) {
+        height: 85vh;
+        background-image: $image-desktop-header;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    h1 {
+        font-family: $font-heading;
+        font-weight: 900;
+        color: $white;
+        letter-spacing: 0.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 2rem;
+    }
+}
+
+.transform {
+    display: flex;
+    flex-direction: column;
+
+    .transform-image {
+        width: 100%;
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .transform-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
+        padding: 3rem 2.4rem;
+        gap: 1.4rem;
+        text-align: center;
+        min-height: 23rem;
+
+        @media (min-width: $breakpoint-desktop) {
+            flex: 1;
+            padding: 4rem 5rem;
+            text-align: left;
+        }
+
+        h2 {
+            font-family: $font-heading;
+            font-weight: 900;
+
+            @media (min-width: $breakpoint-desktop) {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-family: $font-body;
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+
+        a {
+            width: fit-content;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            font-family: $font-heading;
+            font-weight: 900;
+            font-size: 0.8rem;
+            color: black;
+            text-decoration: none;
+
+            align-self: center;
+
+            @media (min-width: $breakpoint-desktop) {
+                align-self: start;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                left: -0.4rem;
+                bottom: -0.01rem;
+
+                height: 0.4rem;
+                width: calc(100% + 0.8rem);
+
+                background: $yellow-light;
+                border-radius: 999px;
+            }
+
+            &:hover::after {
+                background: $yellow-500;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row-reverse;
+        align-items: stretch;
+
+        .transform-image,
+        .transform-content {
+            min-width: 0;
+            flex: 1 1 50%;
+        }
+    }
+}
+
+.stand-out {
+    display: flex;
+    flex-direction: column;
+
+    .stand-out-image {
+        width: 100%;
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .stand-out-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
+        padding: 3rem 2.4rem;
+        gap: 1.4rem;
+        text-align: center;
+        min-height: 23rem;
+
+        @media (min-width: $breakpoint-desktop) {
+            flex: 1;
+            padding: 4rem 5rem;
+            text-align: left;
+        }
+
+        h2 {
+            font-family: $font-heading;
+            font-weight: 900;
+
+            @media (min-width: $breakpoint-desktop) {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-family: $font-body;
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+
+        a {
+            width: fit-content;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            font-family: $font-heading;
+            font-weight: 900;
+            font-size: 0.8rem;
+            color: black;
+            text-decoration: none;
+
+            align-self: center;
+
+            @media (min-width: $breakpoint-desktop) {
+                align-self: start;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: -1000;
+                left: -0.4rem;
+                bottom: -0.01rem;
+                height: 0.4rem;
+                width: calc(100% + 0.8rem);
+                background: $red-light;
+                border-radius: 999px;
+            }
+
+            &:hover::after {
+                background: $red-400;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        align-items: stretch;
+
+        .stand-out-image,
+        .stand-out-content {
+            min-width: 0;
+            flex: 1 1 50%;
+        }
+    }
+}
+
+.graphic-design {
+    min-height: 33rem;
+    background-image: $image-mobile-graphic-design;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-width: 0;
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 3rem 1rem;
+    text-align: center;
+
+
+    h2 {
+        font-family: $font-heading;
+        font-weight: 900;
+        color: $green-800;
+    }
+
+    p {
+        font-family: $font-body;
+        font-weight: 600;
+        color: $green-800;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+
+        max-width: 22rem;
+
+        @media (min-width: $breakpoint-desktop) {
+            max-width: 24rem;
+            padding: 0 2.7rem;
+        }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        justify-content: flex-end;
+        padding: 3rem 2rem;
+    }
+}
+
+.photography {
+    min-height: 33rem;
+    background-image: $image-mobile-photography;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-width: 0;
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 3rem 1rem;
+    text-align: center;
+
+    h2 {
+        font-family: $font-heading;
+        font-weight: 900;
+        color: $green-800;
+    }
+
+    p {
+        font-family: $font-body;
+        font-weight: 600;
+        color: $blue-800;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+
+        max-width: 22rem;
+
+        @media (min-width: $breakpoint-desktop) {
+            max-width: 24rem;
+            padding: 0 2.6rem;
+        }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        justify-content: flex-end;
+        padding: 3rem 2rem;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .graphicdesign-and-photography {
+        display: flex;
+
+        .graphic-design,
+        .photography {
+            min-width: 0;
+            flex: 1 1 50%;
+        }
+
+        .graphic-design {
+            background-image: $image-desktop-graphic-design;
+        }
+
+        .photography {
+            background-image: $image-desktop-photography;
+        }
+    }
+}
+
+.testimonials {
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3.5rem 1.3rem;
+    background-color: $white;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+        padding: 6rem 4rem;
+    }
+
+    h2 {
+        font-family: $font-heading;
+        font-weight: 900;
+        color: $grey-400;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        padding-bottom: 1.5rem;
+
+        @media (min-width: 1024px) {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+    }
+
+    .testimonials-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+
+        .testimonials-client {
+            padding: 2rem 0;
+
+            img {
+                height: 4rem;
+                border-radius: 50%;
+            }
+
+            .testimonials-content {
+                font-family: $font-body;
+                font-weight: 600;
+                color: $grey-550;
+                line-height: 1.7rem;
+                padding: 2.5rem 0;
+
+                @media (min-width: 1024px) {
+                    padding: 3rem 0;
+                }
+            }
+
+            .testimonials-name {
+                font-family: $font-heading;
+                font-weight: 900;
+                color: $grey-950;
+                padding-bottom: 1rem;
+            }
+
+            .testimonials-title {
+                font-family: $font-body;
+                font-weight: 600;
+                color: $grey-400;
+            }
+        }
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 1 / 1;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        display: flex;
+    }
+}
+
+footer {
+    min-height: 18rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .footer-logo {
+        height: 6.5rem;
+        padding: 3rem 0 1.5rem 0;
+    }
+
+    .footer-links-container {
+        display: flex;
+        gap: 3rem;
+
+        font-family: $font-body;
+        font-weight: 600;
+
+        a {
+            color: $green-800;
+            text-decoration: none;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .footer-socials-container {
+        display: flex;
+        gap: 1.7rem;
+        padding-top: 5rem;
+
+        a {
+            &:hover {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+}
