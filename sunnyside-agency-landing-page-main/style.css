@@ -88,20 +88,22 @@ nav .nav-links .contact {
     background-color: hsl(0, 100%, 100%);
   }
 }
-nav .nav-links.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2.5rem 0 3.5rem 0;
-}
-nav .nav-links.active .contact {
-  margin-top: 1rem;
-  font-family: "Fraunces", serif;
-  color: black;
-}
-nav .nav-links.active li:last-child {
-  margin-top: 1rem;
+@media (max-width: 759px) {
+  nav .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.5rem 0 3.5rem 0;
+  }
+  nav .contact {
+    margin-top: 1rem;
+    font-family: "Fraunces", serif;
+    color: black;
+  }
+  nav li:last-child {
+    margin-top: 1rem;
+  }
 }
 nav .nav-menu {
   background: none;

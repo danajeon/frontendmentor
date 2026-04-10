@@ -164,6 +164,12 @@
   menuButton.addEventListener('click', () => {
     navLinks.classList.toggle('active')
   })
+
+  window.addEventListener("resize"), () => {
+    if (window.innerWidth >= 670) {
+      navLinks.classList.remove("active");
+    }
+  }
 </script>
 
 </html>
